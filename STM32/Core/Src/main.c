@@ -146,7 +146,7 @@ int main(void)
 	  }
   }
   //TẮT HẾT ĐÈN ĐỂ KIỂM
-  HAL_GPIO_WritePin(LED_12_GPIO_Port, LED_12_Pin, RESET);
+  //HAL_GPIO_WritePin(LED_12_GPIO_Port, LED_12_Pin, RESET);
   while (1)
   {
     /* USER CODE END WHILE */
