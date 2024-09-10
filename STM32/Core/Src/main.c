@@ -91,9 +91,68 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  void displayLed(int num){
+	  switch(num){
+	  case 1:
+		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_All , RESET);
+		  HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, SET);
+		  break;
+	  case 2:
+		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_All , RESET);
+		  HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, SET);
+		  break;
+	  case 3:
+		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_All , RESET);
+		  HAL_GPIO_WritePin(LED_3_GPIO_Port, LED_3_Pin, SET);
+		  break;
+	  case 4:
+		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_All , RESET);
+		  HAL_GPIO_WritePin(LED_4_GPIO_Port, LED_4_Pin, SET);
+		  break;
+	  case 5:
+		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_All , RESET);
+		  HAL_GPIO_WritePin(LED_5_GPIO_Port, LED_5_Pin, SET);
+		  break;
+	  case 6:
+		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_All , RESET);
+		  HAL_GPIO_WritePin(LED_6_GPIO_Port, LED_6_Pin, SET);
+		  break;
+	  case 7:
+		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_All , RESET);
+		  HAL_GPIO_WritePin(LED_7_GPIO_Port, LED_7_Pin, SET);
+		  break;
+	  case 8:
+		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_All , RESET);
+		  HAL_GPIO_WritePin(LED_8_GPIO_Port, LED_8_Pin, SET);
+		  break;
+	  case 9:
+		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_All , RESET);
+		  HAL_GPIO_WritePin(LED_9_GPIO_Port, LED_9_Pin, SET);
+		  break;
+	  case 10:
+		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_All , RESET);
+		  HAL_GPIO_WritePin(LED_10_GPIO_Port, LED_10_Pin, SET);
+		  break;
+	  case 11:
+		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_All , RESET);
+		  HAL_GPIO_WritePin(LED_11_GPIO_Port, LED_11_Pin, SET);
+		  break;
+	  case 12:
+		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_All , RESET);
+		  HAL_GPIO_WritePin(LED_12_GPIO_Port, LED_12_Pin, SET);
+		  break;
+	  default:
+		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_All , RESET);
+	  }
+  }
+  int count=0;
   while (1)
   {
     /* USER CODE END WHILE */
+	  if (count > 12) count=1;
+	  displayLed(count++);
+	  HAL_Delay(1000);
+    /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
 }
@@ -146,10 +205,16 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOA_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, LED_RED_Pin|LED_YELLOW_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, LED_1_Pin|LED_2_Pin|LED_3_Pin|LED_4_Pin
+                          |LED_5_Pin|LED_6_Pin|LED_7_Pin|LED_8_Pin
+                          |LED_9_Pin|LED_10_Pin|LED_11_Pin|LED_12_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : LED_RED_Pin LED_YELLOW_Pin */
-  GPIO_InitStruct.Pin = LED_RED_Pin|LED_YELLOW_Pin;
+  /*Configure GPIO pins : LED_1_Pin LED_2_Pin LED_3_Pin LED_4_Pin
+                           LED_5_Pin LED_6_Pin LED_7_Pin LED_8_Pin
+                           LED_9_Pin LED_10_Pin LED_11_Pin LED_12_Pin */
+  GPIO_InitStruct.Pin = LED_1_Pin|LED_2_Pin|LED_3_Pin|LED_4_Pin
+                          |LED_5_Pin|LED_6_Pin|LED_7_Pin|LED_8_Pin
+                          |LED_9_Pin|LED_10_Pin|LED_11_Pin|LED_12_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
