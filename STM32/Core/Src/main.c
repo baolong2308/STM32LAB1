@@ -91,7 +91,7 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  void displayLed(int num){
+  void setNumberOnClock(int num){
 	  switch(num){
 	  case 1:
 		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_All , RESET);
@@ -137,7 +137,7 @@ int main(void)
 		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_All , RESET);
 		  HAL_GPIO_WritePin(LED_11_GPIO_Port, LED_11_Pin, SET);
 		  break;
-	  case 12:
+	  case 0:
 		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_All , RESET);
 		  HAL_GPIO_WritePin(LED_12_GPIO_Port, LED_12_Pin, SET);
 		  break;
@@ -145,12 +145,11 @@ int main(void)
 		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_All , RESET);
 	  }
   }
-  int count=0;
   while (1)
   {
     /* USER CODE END WHILE */
-	  if (count > 12) count=1;
-	  displayLed(count++);
+
+	  setNumberOnClock(0);
 	  HAL_Delay(1000);
     /* USER CODE BEGIN 3 */
   }
