@@ -93,6 +93,9 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   int state = 0;
   int count = 0;
+  int RED_TIME=5;
+  int YELLOW_TIME=2;
+  int GREEN_TIME=3;
   while (1)
   {
     /* USER CODE END WHILE */
