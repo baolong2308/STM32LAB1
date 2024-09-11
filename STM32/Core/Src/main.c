@@ -91,7 +91,7 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  void displayLed(int num){
+  void setNumberOnClock(int num){
 	  switch(num){
 	  case 1:
 		  HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, SET);
@@ -143,28 +143,105 @@ int main(void)
 		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_All , RESET);
 	  }
   }
+  void clearNumberOnClock(int num){
+	  switch(num){
+	  case 1:
+
+		  HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, RESET);
+		  break;
+	  case 2:
+
+		  HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, RESET);
+		  break;
+	  case 3:
+
+		  HAL_GPIO_WritePin(LED_3_GPIO_Port, LED_3_Pin, RESET);
+		  break;
+	  case 4:
+
+		  HAL_GPIO_WritePin(LED_4_GPIO_Port, LED_4_Pin, RESET);
+		  break;
+	  case 5:
+
+		  HAL_GPIO_WritePin(LED_5_GPIO_Port, LED_5_Pin, RESET);
+		  break;
+	  case 6:
+
+		  HAL_GPIO_WritePin(LED_6_GPIO_Port, LED_6_Pin, RESET);
+		  break;
+	  case 7:
+
+		  HAL_GPIO_WritePin(LED_7_GPIO_Port, LED_7_Pin, RESET);
+		  break;
+	  case 8:
+
+		  HAL_GPIO_WritePin(LED_8_GPIO_Port, LED_8_Pin, RESET);
+		  break;
+	  case 9:
+
+		  HAL_GPIO_WritePin(LED_9_GPIO_Port, LED_9_Pin, RESET);
+		  break;
+	  case 10:
+
+		  HAL_GPIO_WritePin(LED_10_GPIO_Port, LED_10_Pin, RESET);
+		  break;
+	  case 11:
+
+		  HAL_GPIO_WritePin(LED_11_GPIO_Port, LED_11_Pin, RESET);
+		  break;
+	  case 0:
+
+		  HAL_GPIO_WritePin(LED_12_GPIO_Port, LED_12_Pin, RESET);
+		  break;
+	  default:
+		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_All , RESET);
+	  }
+  }
   int hour=0;
   int minute=0;
   int second=0;
+  int h = -1;
+  int m = -1;
+  int s = -1;
   while (1)
   {
     /* USER CODE END WHILE */
-	  if(second>=60){
-		  minute+=5;
-		  second=0;
 
-	  }
-	  if(minute>=60){
-		  hour+=5;
-		  minute=0;
+      if (s >= 0) {
+          clearNumberOnClock(s);
+      }
+      if (m >= 0) {
+          clearNumberOnClock(m);
+      }
+      if (h >= 0) {
+          clearNumberOnClock(h);
+      }
 
-	  }
-	  displayLed(second/5);
-	  displayLed(minute/5);
-	  displayLed(hour/5);
-	  second+=5;
+      setNumberOnClock(second);
+      setNumberOnClock(minute);
+      setNumberOnClock(hour);
 
-	  HAL_Delay(1000);
+      s = second;
+      m = minute;
+      h = hour;
+
+      second++;
+      if (second >= 12) {
+          second = 0;
+          minute++;
+      }
+
+      if (minute >= 12) {
+          minute = 0;
+          hour++;
+      }
+
+      if (hour >= 12) {
+          hour = 0;
+      }
+
+
+	  HAL_Delay(5000);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
