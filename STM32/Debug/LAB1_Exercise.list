@@ -299,11 +299,11 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  if (count > 12) count=1;
+	  if (count >= 12) count=0;
  8000300:	687b      	ldr	r3, [r7, #4]
- 8000302:	2b0c      	cmp	r3, #12
+ 8000302:	2b0b      	cmp	r3, #11
  8000304:	dd01      	ble.n	800030a <main+0x26>
- 8000306:	2301      	movs	r3, #1
+ 8000306:	2300      	movs	r3, #0
  8000308:	607b      	str	r3, [r7, #4]
 	  displayLed(count++);
  800030a:	687b      	ldr	r3, [r7, #4]
@@ -316,7 +316,7 @@ int main(void)
 	  HAL_Delay(1000);
  800031a:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  800031e:	f000 f95f 	bl	80005e0 <HAL_Delay>
-	  if (count > 12) count=1;
+	  if (count >= 12) count=0;
  8000322:	e7ed      	b.n	8000300 <main+0x1c>
 
 08000324 <SystemClock_Config>:
