@@ -89,23 +89,23 @@ Disassembly of section .text:
  8000152:	6078      	str	r0, [r7, #4]
  8000154:	f8c7 c000 	str.w	ip, [r7]
  8000158:	687b      	ldr	r3, [r7, #4]
- 800015a:	3b01      	subs	r3, #1
- 800015c:	2b0b      	cmp	r3, #11
- 800015e:	f200 80b3 	bhi.w	80002c8 <displayLed.5429+0x17c>
- 8000162:	a201      	add	r2, pc, #4	; (adr r2, 8000168 <displayLed.5429+0x1c>)
- 8000164:	f852 f023 	ldr.w	pc, [r2, r3, lsl #2]
- 8000168:	08000199 	.word	0x08000199
- 800016c:	080001b1 	.word	0x080001b1
- 8000170:	080001c9 	.word	0x080001c9
- 8000174:	080001e1 	.word	0x080001e1
- 8000178:	080001f9 	.word	0x080001f9
- 800017c:	08000213 	.word	0x08000213
- 8000180:	0800022d 	.word	0x0800022d
- 8000184:	08000247 	.word	0x08000247
- 8000188:	08000261 	.word	0x08000261
- 800018c:	0800027b 	.word	0x0800027b
- 8000190:	08000295 	.word	0x08000295
- 8000194:	080002af 	.word	0x080002af
+ 800015a:	2b0b      	cmp	r3, #11
+ 800015c:	f200 80b4 	bhi.w	80002c8 <displayLed.5429+0x17c>
+ 8000160:	a201      	add	r2, pc, #4	; (adr r2, 8000168 <displayLed.5429+0x1c>)
+ 8000162:	f852 f023 	ldr.w	pc, [r2, r3, lsl #2]
+ 8000166:	bf00      	nop
+ 8000168:	080002af 	.word	0x080002af
+ 800016c:	08000199 	.word	0x08000199
+ 8000170:	080001b1 	.word	0x080001b1
+ 8000174:	080001c9 	.word	0x080001c9
+ 8000178:	080001e1 	.word	0x080001e1
+ 800017c:	080001f9 	.word	0x080001f9
+ 8000180:	08000213 	.word	0x08000213
+ 8000184:	0800022d 	.word	0x0800022d
+ 8000188:	08000247 	.word	0x08000247
+ 800018c:	08000261 	.word	0x08000261
+ 8000190:	0800027b 	.word	0x0800027b
+ 8000194:	08000295 	.word	0x08000295
 	  switch(num){
 	  case 1:
 		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_All , RESET);
@@ -250,8 +250,8 @@ Disassembly of section .text:
  80002a8:	f000 fc1c 	bl	8000ae4 <HAL_GPIO_WritePin>
 		  break;
  80002ac:	e013      	b.n	80002d6 <displayLed.5429+0x18a>
-	  case 12:
-		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_All , RESET);
+	  case 0:
+		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_All , RESET) ;
  80002ae:	2200      	movs	r2, #0
  80002b0:	f64f 71ff 	movw	r1, #65535	; 0xffff
  80002b4:	480a      	ldr	r0, [pc, #40]	; (80002e0 <displayLed.5429+0x194>)
