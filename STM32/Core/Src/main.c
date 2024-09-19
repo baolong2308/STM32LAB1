@@ -513,7 +513,6 @@ int main(void)
 	  {
 	  case 0:
 		  // Hướng 1 và 3 xanh, hướng 2 và 4 đỏ
-
 	  	  if (state_led == 0 && count >= GREEN_TIME){
 
 	  	        state_led = 1;
@@ -583,7 +582,7 @@ int main(void)
 	  		  }
 	  		  // Đèn đỏ tắt và đèn xanh bật cho hướng 2 và 4
 	  		  if(state_led == 0 && count < GREEN_TIME){
-	  	            		  //hướng 2-4
+	  			  //hướng 2-4
 	  			  HAL_GPIO_WritePin(LED_4_GPIO_Port, LED_4_Pin, GPIO_PIN_RESET); // Đèn đỏ tắt
 	  			  HAL_GPIO_WritePin(LED_10_GPIO_Port, LED_10_Pin, GPIO_PIN_RESET);
 	  			  HAL_GPIO_WritePin(LED_6_GPIO_Port, LED_6_Pin, GPIO_PIN_SET);   // Đèn bật

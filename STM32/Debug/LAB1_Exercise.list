@@ -684,7 +684,6 @@ int main(void)
 	  {
 	  case 0:
 		  // Hướng 1 và 3 xanh, hướng 2 và 4 đỏ
-
 	  	  if (state_led == 0 && count >= GREEN_TIME){
  80004f4:	697b      	ldr	r3, [r7, #20]
  80004f6:	2b00      	cmp	r3, #0
@@ -984,7 +983,7 @@ int main(void)
  80006fc:	68fb      	ldr	r3, [r7, #12]
  80006fe:	429a      	cmp	r2, r3
  8000700:	da32      	bge.n	8000768 <main+0x2b4>
-	  	            		  //hướng 2-4
+	  			  //hướng 2-4
 	  			  HAL_GPIO_WritePin(LED_4_GPIO_Port, LED_4_Pin, GPIO_PIN_RESET); // Đèn đỏ tắt
  8000702:	2200      	movs	r2, #0
  8000704:	2110      	movs	r1, #16
