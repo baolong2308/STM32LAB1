@@ -27,9 +27,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000029  00000000  00000000  0002000c  2**0
                   CONTENTS, READONLY
- 12 .debug_info   0000307c  00000000  00000000  00020035  2**0
+ 12 .debug_info   0000307a  00000000  00000000  00020035  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 00000ebd  00000000  00000000  000230b1  2**0
+ 13 .debug_abbrev 00000ebd  00000000  00000000  000230af  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  14 .debug_aranges 000003e0  00000000  00000000  00023f70  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -123,7 +123,6 @@ Disassembly of section .text:
 		  break;
  80001aa:	e04a      	b.n	8000242 <setNumberOnClock.5429+0xf6>
 	  case 3:
-
 		  HAL_GPIO_WritePin(LED_3_GPIO_Port, LED_3_Pin, SET);
  80001ac:	2201      	movs	r2, #1
  80001ae:	2140      	movs	r1, #64	; 0x40
@@ -132,7 +131,6 @@ Disassembly of section .text:
 		  break;
  80001b6:	e044      	b.n	8000242 <setNumberOnClock.5429+0xf6>
 	  case 4:
-
 		  HAL_GPIO_WritePin(LED_4_GPIO_Port, LED_4_Pin, SET);
  80001b8:	2201      	movs	r2, #1
  80001ba:	2180      	movs	r1, #128	; 0x80
@@ -141,7 +139,6 @@ Disassembly of section .text:
 		  break;
  80001c2:	e03e      	b.n	8000242 <setNumberOnClock.5429+0xf6>
 	  case 5:
-
 		  HAL_GPIO_WritePin(LED_5_GPIO_Port, LED_5_Pin, SET);
  80001c4:	2201      	movs	r2, #1
  80001c6:	f44f 7180 	mov.w	r1, #256	; 0x100
@@ -150,7 +147,6 @@ Disassembly of section .text:
 		  break;
  80001d0:	e037      	b.n	8000242 <setNumberOnClock.5429+0xf6>
 	  case 6:
-
 		  HAL_GPIO_WritePin(LED_6_GPIO_Port, LED_6_Pin, SET);
  80001d2:	2201      	movs	r2, #1
  80001d4:	f44f 7100 	mov.w	r1, #512	; 0x200
@@ -159,7 +155,6 @@ Disassembly of section .text:
 		  break;
  80001de:	e030      	b.n	8000242 <setNumberOnClock.5429+0xf6>
 	  case 7:
-
 		  HAL_GPIO_WritePin(LED_7_GPIO_Port, LED_7_Pin, SET);
  80001e0:	2201      	movs	r2, #1
  80001e2:	f44f 6180 	mov.w	r1, #1024	; 0x400
@@ -168,7 +163,6 @@ Disassembly of section .text:
 		  break;
  80001ec:	e029      	b.n	8000242 <setNumberOnClock.5429+0xf6>
 	  case 8:
-
 		  HAL_GPIO_WritePin(LED_8_GPIO_Port, LED_8_Pin, SET);
  80001ee:	2201      	movs	r2, #1
  80001f0:	f44f 6100 	mov.w	r1, #2048	; 0x800
@@ -177,7 +171,6 @@ Disassembly of section .text:
 		  break;
  80001fa:	e022      	b.n	8000242 <setNumberOnClock.5429+0xf6>
 	  case 9:
-
 		  HAL_GPIO_WritePin(LED_9_GPIO_Port, LED_9_Pin, SET);
  80001fc:	2201      	movs	r2, #1
  80001fe:	f44f 5180 	mov.w	r1, #4096	; 0x1000
@@ -186,7 +179,6 @@ Disassembly of section .text:
 		  break;
  8000208:	e01b      	b.n	8000242 <setNumberOnClock.5429+0xf6>
 	  case 10:
-
 		  HAL_GPIO_WritePin(LED_10_GPIO_Port, LED_10_Pin, SET);
  800020a:	2201      	movs	r2, #1
  800020c:	f44f 5100 	mov.w	r1, #8192	; 0x2000
@@ -195,7 +187,6 @@ Disassembly of section .text:
 		  break;
  8000216:	e014      	b.n	8000242 <setNumberOnClock.5429+0xf6>
 	  case 11:
-
 		  HAL_GPIO_WritePin(LED_11_GPIO_Port, LED_11_Pin, SET);
  8000218:	2201      	movs	r2, #1
  800021a:	f44f 4180 	mov.w	r1, #16384	; 0x4000
@@ -204,7 +195,6 @@ Disassembly of section .text:
 		  break;
  8000224:	e00d      	b.n	8000242 <setNumberOnClock.5429+0xf6>
 	  case 0:
-
 		  HAL_GPIO_WritePin(LED_12_GPIO_Port, LED_12_Pin, SET);
  8000226:	2201      	movs	r2, #1
  8000228:	f44f 4100 	mov.w	r1, #32768	; 0x8000
@@ -299,7 +289,6 @@ int main(void)
  80002b0:	6938      	ldr	r0, [r7, #16]
  80002b2:	f000 f833 	bl	800031c <clearNumberOnClock.5446>
       }
-
       setNumberOnClock(second);
  80002b6:	1d3b      	adds	r3, r7, #4
  80002b8:	469c      	mov	ip, r3
@@ -364,8 +353,6 @@ int main(void)
  800030c:	2300      	movs	r3, #0
  800030e:	61fb      	str	r3, [r7, #28]
       }
-
-
 	  HAL_Delay(1000);
  8000310:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  8000314:	f000 f9e2 	bl	80006dc <HAL_Delay>
