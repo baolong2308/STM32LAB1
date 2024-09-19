@@ -300,9 +300,9 @@ int main(void)
   int state = 0;// trạng thái
   int count = 0;// đếm thời gian
   int state_led = 0;// tín hiệu đổi đèn
-  int RED_TIME = 10;
-  int GREEN_TIME = 7;
-  int YELLOW_TIME = 3;
+  int RED_TIME = 5;
+  int GREEN_TIME = 3;
+  int YELLOW_TIME = 2;
 
   while (1)
   {
