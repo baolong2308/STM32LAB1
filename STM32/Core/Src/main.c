@@ -297,9 +297,9 @@ int main(void)
     	    		break;
     	}
     }
-  int state = 0;
-  int count = 0;
-  int state_led = 0;
+  int state = 0;// trạng thái
+  int count = 0;// đếm thời gian
+  int state_led = 0;// tín hiệu đổi đèn
   int RED_TIME = 10;
   int GREEN_TIME = 7;
   int YELLOW_TIME = 3;
