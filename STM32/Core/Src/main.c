@@ -519,10 +519,8 @@ int main(void)
 	  	        count = 0;
 
 	  	  }else if (state_led == 1 && count >= YELLOW_TIME){
-
 	  	      state_led = 2;
 	  	       count = 0;
-
 	  	  }else if (state_led == 2 && count >= RED_TIME){
 	  		  state_led = 0;
 	  		  count = 0;
@@ -585,7 +583,7 @@ int main(void)
 	  			  //hướng 2-4
 	  			  HAL_GPIO_WritePin(LED_4_GPIO_Port, LED_4_Pin, GPIO_PIN_RESET); // Đèn đỏ tắt
 	  			  HAL_GPIO_WritePin(LED_10_GPIO_Port, LED_10_Pin, GPIO_PIN_RESET);
-	  			  HAL_GPIO_WritePin(LED_6_GPIO_Port, LED_6_Pin, GPIO_PIN_SET);   // Đèn bật
+	  			  HAL_GPIO_WritePin(LED_6_GPIO_Port, LED_6_Pin, GPIO_PIN_SET);   // Đèn xanh bật
 	  			  HAL_GPIO_WritePin(LED_12_GPIO_Port, LED_12_Pin, GPIO_PIN_SET);
 	  			  //hướng 1-3
 	  			  HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, GPIO_PIN_SET);   // Đèn đỏ bật
@@ -599,31 +597,19 @@ int main(void)
 
 	  			  HAL_GPIO_WritePin(LED_12_GPIO_Port, LED_12_Pin, GPIO_PIN_RESET);
 	  			  HAL_GPIO_WritePin(LED_5_GPIO_Port, LED_5_Pin, GPIO_PIN_SET);   // Đèn vàng bật
-
 	  			  HAL_GPIO_WritePin(LED_11_GPIO_Port, LED_11_Pin, GPIO_PIN_SET);
-
 	  			  display7SEG_2(YELLOW_TIME-count-1);	//thời gian đèn vàng
-
 	  			  display7SEG_1(RED_TIME-GREEN_TIME-count-1);	// thời gian đèn đỏ
 
 	  		  }
-
 	  		  else if (state_led == 2 && count < RED_TIME) //đổi case
-
 	  		  {
-
 	  			  HAL_GPIO_WritePin(LED_5_GPIO_Port, LED_5_Pin, GPIO_PIN_RESET); // Đèn vàng tắt
-
 	  			  HAL_GPIO_WritePin(LED_11_GPIO_Port, LED_11_Pin, GPIO_PIN_RESET);
-
 	  			  HAL_GPIO_WritePin(LED_4_GPIO_Port, LED_4_Pin, GPIO_PIN_SET); // Đèn đỏ bật
-
 	  			  HAL_GPIO_WritePin(LED_10_GPIO_Port, LED_10_Pin, GPIO_PIN_SET);
-
 	  			  //hướng 1-3
-
 	  			  HAL_GPIO_WritePin(LED_3_GPIO_Port, LED_3_Pin, GPIO_PIN_SET);   //đèn xanh bật
-
 	  			  HAL_GPIO_WritePin(LED_9_GPIO_Port, LED_9_Pin, GPIO_PIN_SET);
 	  			  HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, GPIO_PIN_RESET);   //đèn đỏ tắt
 	  			  HAL_GPIO_WritePin(LED_7_GPIO_Port, LED_7_Pin, GPIO_PIN_RESET);
