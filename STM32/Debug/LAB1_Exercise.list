@@ -680,7 +680,6 @@ int main(void)
  80004ec:	2b01      	cmp	r3, #1
  80004ee:	f000 80de 	beq.w	80006ae <main+0x1fa>
  80004f2:	e1bc      	b.n	800086e <main+0x3ba>
-
 	  {
 	  case 0:
 		  // Hướng 1 và 3 xanh, hướng 2 và 4 đỏ

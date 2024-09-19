@@ -509,7 +509,6 @@ int main(void)
 
     /* USER CODE END WHILE */
 	  switch(state)
-
 	  {
 	  case 0:
 		  // Hướng 1 và 3 xanh, hướng 2 và 4 đỏ
