@@ -217,7 +217,7 @@ int main(void)
 
           hour = 0;
       }
-	  HAL_Delay(500);
+	  HAL_Delay(5000);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
